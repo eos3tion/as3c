@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{622EDE92-CE31-43CF-97E7-CC671D98CA83}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>as3c</RootNamespace>
+    <AssemblyName>as3c</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <PublishUrl>C:\Users\Administrator\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>ADBEE25B6C59508EADBF5E459BAA4E11F79904DE</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>as3c_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SevenZipSharp">
+      <HintPath>As3c\SevenZipSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zlib.net, Version=1.1.0.0, Culture=neutral, PublicKeyToken=8c48856268042b4c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>As3c\zlib.net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="As3c\Common\AVM2Command.cs" />
+    <Compile Include="As3c\Common\DebugUtil.cs" />
+    <Compile Include="As3c\Common\Exceptions\TranslatorException.cs" />
+    <Compile Include="As3c\Common\Op.cs" />
+    <Compile Include="As3c\Common\Translator.cs" />
+    <Compile Include="As3c\Compiler\ByteCodeAnalyzer.cs" />
+    <Compile Include="As3c\Compiler\CompilerBlur.cs" />
+    <Compile Include="As3c\Compiler\CompilerBlurJY.cs" />
+    <Compile Include="As3c\Compiler\CompilerInline.cs" />
+    <Compile Include="As3c\Compiler\Exceptions\InstructionException.cs" />
+    <Compile Include="As3c\Compiler\GetStringTabel.cs" />
+    <Compile Include="As3c\Compiler\ICompile.cs" />
+    <Compile Include="As3c\Compiler\ImportAssetsRewriter.cs" />
+    <Compile Include="As3c\Compiler\ParserInformation.cs" />
+    <Compile Include="As3c\Compiler\Utils\Instruction.cs" />
+    <Compile Include="As3c\Compiler\Utils\JumpTargetData.cs" />
+    <Compile Include="Program.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SwfLibrary\Abc\Abc46.cs" />
+    <Compile Include="SwfLibrary\Abc\ClassInfo.cs" />
+    <Compile Include="SwfLibrary\Abc\ConstantPool.cs" />
+    <Compile Include="SwfLibrary\Abc\Constants\MultinameInfo.cs" />
+    <Compile Include="SwfLibrary\Abc\Constants\NamespaceInfo.cs" />
+    <Compile Include="SwfLibrary\Abc\Constants\NamespaceSetInfo.cs" />
+    <Compile Include="SwfLibrary\Abc\Constants\StringInfo.cs" />
+    <Compile Include="SwfLibrary\Abc\ExceptionInfo.cs" />
+    <Compile Include="SwfLibrary\Abc\InstanceInfo.cs" />
+    <Compile Include="SwfLibrary\Abc\MetadataInfo.cs" />
+    <Compile Include="SwfLibrary\Abc\MethodBodyInfo.cs" />
+    <Compile Include="SwfLibrary\Abc\MethodInfo.cs" />
+    <Compile Include="SwfLibrary\Abc\OptionDetail.cs" />
+    <Compile Include="SwfLibrary\Abc\OptionInfo.cs" />
+    <Compile Include="SwfLibrary\Abc\ScriptInfo.cs" />
+    <Compile Include="SwfLibrary\Abc\TraitInfo.cs" />
+    <Compile Include="SwfLibrary\Abc\Traits\TraitBody.cs" />
+    <Compile Include="SwfLibrary\Abc\Traits\TraitClass.cs" />
+    <Compile Include="SwfLibrary\Abc\Traits\TraitConst.cs" />
+    <Compile Include="SwfLibrary\Abc\Traits\TraitFunction.cs" />
+    <Compile Include="SwfLibrary\Abc\Traits\TraitGetter.cs" />
+    <Compile Include="SwfLibrary\Abc\Traits\TraitMethod.cs" />
+    <Compile Include="SwfLibrary\Abc\Traits\TraitSetter.cs" />
+    <Compile Include="SwfLibrary\Abc\Traits\TraitSlot.cs" />
+    <Compile Include="SwfLibrary\Abc\Utils\ABCGetInstanceProperty.cs" />
+    <Compile Include="SwfLibrary\Abc\Utils\NameUtil.cs" />
+    <Compile Include="SwfLibrary\Exceptions\OverflowException.cs" />
+    <Compile Include="SwfLibrary\Exceptions\VerifyException.cs" />
+    <Compile Include="SwfLibrary\SwfFormat.cs" />
+    <Compile Include="SwfLibrary\Swf\SWFSymbol.cs" />
+    <Compile Include="SwfLibrary\Types\DoAction.cs" />
+    <Compile Include="SwfLibrary\Types\Header.cs" />
+    <Compile Include="SwfLibrary\Types\Primitives.cs" />
+    <Compile Include="SwfLibrary\Types\RecordHeader.cs" />
+    <Compile Include="SwfLibrary\Types\RECT.cs" />
+    <Compile Include="SwfLibrary\Types\Tag.cs" />
+    <Compile Include="SwfLibrary\Types\TagBody.cs" />
+    <Compile Include="SwfLibrary\Types\Tags\DefaultBody.cs" />
+    <Compile Include="SwfLibrary\Types\Tags\DoABC.cs" />
+    <Compile Include="SwfLibrary\Types\Tags\DoABCDeprecated.cs" />
+    <Compile Include="SwfLibrary\Types\Tags\ImportAssets2.cs" />
+    <Compile Include="SwfLibrary\Types\Tags\SymbolClass.cs" />
+    <Compile Include="SwfLibrary\Utils\BitUtil.cs" />
+    <Compile Include="SwfLibrary\Utils\Capacity.cs" />
+    <Compile Include="SwfLibrary\Utils\IExternalizeable.cs" />
+    <Compile Include="SwfLibrary\Utils\IHasTraits.cs" />
+    <Compile Include="SwfLibrary\Utils\IVariableLength.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="as3c_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="As3c\zlib.net.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
